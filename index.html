@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    section {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      background: #3586ff;
+      overflow: hidden;
+    }
+
+    section .air {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100px;
+      background: url(wave.png);
+      background-size: 1000px 100px;
+    }
+
+    section .air.air1 {
+      animation: wave 30s linear infinite;
+      z-index: 1;
+      opacity: 1;
+      animation-delay: 0s;
+      bottom: 0;
+    }
+
+    section .air.air2 {
+      animation: wave2 15s linear infinite;
+      z-index: 2;
+      opacity: 0.5;
+      animation-delay: -5s;
+      bottom: 10px;
+    }
+
+    section .air.air3 {
+      animation: wave 30s linear infinite;
+      z-index: 3;
+      opacity: 0.2;
+      animation-delay: -2s;
+      bottom: 15px;
+    }
+
+    section .air.air4 {
+      animation: wave2 5s linear infinite;
+      z-index: 4;
+      opacity: 0.7;
+      animation-delay: -5s;
+      bottom: 20px;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 5; /* 确保内容在波浪上层 */
+      text-align: center;
+    }
+
+    .container img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%; /* 圆形头像 */
+      object-fit: cover;
+      margin-bottom: 10px; /* 头像与文字的间距 */
+    }
+
+    .container p {
+      font-size: 18px;
+      color: #ffffff;
+      margin-bottom: 10px; /* 文字与按钮的间距 */
+    }
+
+    .container a {
+      text-decoration: none;
+    }
+
+    .container button {
+      background-color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    @keyframes wave {
+      0% {
+        background-position-x: 0px;
+      }
+      100% {
+        background-position-x: 1000px;
+      }
+    }
+
+    @keyframes wave2 {
+      0% {
+        background-position-x: 0px;
+      }
+      100% {
+        background-position-x: -1000px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <section>
+    <div class="air air1"></div>
+    <div class="air air2"></div>
+    <div class="air air3"></div>
+    <div class="air air4"></div>
+    <div class="container">
+      <img src="dog.jpg" alt="Avatar"> <!-- 请替换为实际的头像图片路径 -->
+      <p>Offwhite</p>
+      <a href="https://blog.csdn.net/j2312431201?type=blog" target="_blank">
+        <button>START</button>
+      </a>
+    </div>
+  </section>
+</body>
+
+</html>
